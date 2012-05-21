@@ -1,0 +1,33 @@
+<%= render :file => "/mobile/header.html.erb" %>
+
+<div data-role="content">
+  <ul data-role="listview" data-theme="c" data-inset="true" data-filter="true">
+    <% @books.each do |book| %>
+      <li>
+        <a href="<%= url_for(:action => :book, :id => book.id) %>">
+          <h4><%= book.name %></h4>
+          <table class="bookinf">
+            <tr>
+              <td><strong>Categoria</strong></td>
+              <td><%= book.category.description %></td>
+            </tr>
+            <tr>
+              <td><strong>Autor</strong></td>
+              <td><%= book.author %></td>
+            </tr>
+            <tr>
+              <td><strong>Editor</strong></td>
+              <td><%= book.editor %></td>
+            </tr>
+            <% if @all %>
+            <tr>
+              <td><strong>Unidade</strong></td>
+              <td><%= book.unit.name %></td>
+            </tr>
+            <% end %>
+          </table>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</div>

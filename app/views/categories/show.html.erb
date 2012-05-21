@@ -1,0 +1,19 @@
+<h1><%= link_to 'Categorias', categories_path %> > Visualizar</h1>
+
+<% if notice %>
+  <div id="notice"><%= notice %></div>
+  </br>
+<% end %>
+
+<div class="fields">
+  <table>
+    <tr>
+      <td><label for="category_id">Código</label></td>
+      <td><%= text_field 'category', 'id', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="category_description">Descrição</label></td>
+      <td><%= text_field 'category', 'description', :disabled => 'disabled' %></td>
+    </tr>
+  </table>
+</div>

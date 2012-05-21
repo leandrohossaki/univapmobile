@@ -1,0 +1,31 @@
+<h1>Lista de Avaliações</h1>
+
+<table class="grid">
+  <tr>
+    <th colspan="3" align="left"><%= link_to image_tag('add.png', :border => 0), new_evaluation_path, :title => 'Adicionar' %></th>
+    <th>Disciplina</th>
+    <th>Aluno</th>
+    <th>Período</th>
+    <th>Nota 1</th>
+    <th>Nota 2</th>
+    <th>Exame</th>
+    <th>Status</th>
+  </tr>
+
+<% @evaluations.each do |evaluation| %>
+  <tr>
+    <td><%= link_to image_tag('view.png', :border => 0), evaluation, :title => 'Visualizar' %></td>
+    <td><%= link_to image_tag('edit.png', :border => 0), edit_evaluation_path(evaluation), :title => 'Editar' %></td>
+    <td><%= link_to image_tag('delete.png', :border => 0), evaluation, confirm: 'Deseja realmente excluir o registro?', method: :delete, :title => 'Excluir' %></td>
+    <td><%= evaluation.discipline_id %></td>
+    <td><%= evaluation.student_id %></td>
+    <td><%= evaluation.period %></td>
+    <td><%= evaluation.evaluation1 %></td>
+    <td><%= evaluation.evaluation2 %></td>
+    <td><%= evaluation.exame %></td>
+    <td><%= evaluation.status %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

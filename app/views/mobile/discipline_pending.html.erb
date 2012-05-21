@@ -1,0 +1,17 @@
+<%= render :file => "/mobile/header.html.erb" %>
+
+<div data-role="content">
+  <ul data-role="listview" data-theme="c" data-inset="true">
+    <li data-role="list-divider">
+      Dados
+    </li>
+    <li>
+      <h4>Código</h4>
+      <p><%= @discipline.id %></p>
+    </li>
+    <li>
+      <h4>Disciplina</h4>
+      <p><%= @discipline.description %></p>
+    </li>
+  </ul>
+</div>

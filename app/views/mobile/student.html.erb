@@ -1,0 +1,10 @@
+<%= render :file => "/mobile/header.html.erb" %>
+
+<div data-role="content">
+  <ul data-role="listview" data-theme="c" data-inset="true">
+    <li><%= link_to "Dados Pessoais", :action => :student_data %></li>
+    <li><%= link_to "Histórico", :action => :disciplines_history %></li>
+    <li><%= link_to "Boletim", :action => :disciplines_now %></li>
+    <li><%= link_to "A cursar", :action => :disciplines_pending %></li>
+  </ul>
+</div>

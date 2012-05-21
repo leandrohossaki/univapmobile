@@ -1,0 +1,30 @@
+<%= form_for(@category) do |f| %>
+  <% if @category.errors.any? %>
+    <div id="error_explanation">
+      <strong><%= @category.errors.count.to_s %> erro(s) encontrado(s):</strong>
+
+      <ul>
+      <% @category.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    </br>
+  <% end %>
+
+  <div class="fields">
+    <table>
+      <tr>
+        <td><label for="category_id">Código</label></td>
+        <td><%= text_field 'category', 'id', :disabled => 'disabled' %></td>
+      </tr>
+      <tr>
+        <td><label for="category_description">Descrição</label></td>
+        <td><%= text_field 'category', 'description' %></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"><%= f.submit @button_title %><td>
+      </tr>
+    </table>
+  </div>
+<% end %>

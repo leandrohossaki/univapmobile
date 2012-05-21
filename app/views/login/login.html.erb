@@ -1,0 +1,30 @@
+<h1>Entrar</h1>
+<%= form_tag @student do |f| %>
+  <% if flash[:notice] %>
+    <div id="error_explanation">
+      <ul>
+      <% flash.each do |key, msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      <% flash[:notice] = nil %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>Por favor, insira sua matrícula e sua senha para entrar no site</p>
+  <div class="fields">
+    <table>
+      <tr>
+        <td><label for="id">Matrícula</label></td>
+        <td><%= text_field "id", "", :maxlength => 10 %></td>
+      </tr>
+      <tr>
+        <td><label for="password">Senha</label></td>
+        <td><%= password_field "password", "", :maxlength => 10 %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><%= submit_tag "Entrar" %></td>
+      </tr>
+    </table>
+  </div>
+<% end %>

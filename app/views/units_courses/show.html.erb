@@ -1,0 +1,19 @@
+<h1><%= link_to 'Unidades X Cursos', units_courses_path %> > Visualizar</h1>
+
+<% if notice %>
+  <div id="notice"><%= notice %></div>
+  </br>
+<% end %>
+
+<div class="fields">
+  <table>
+    <tr>
+      <td><label for="units_course_unit_id">Unidade</label></td>
+      <td><%= text_field 'units_course', 'unit_id', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="units_course_course_id">Curso</label></td>
+      <td><%= text_field 'units_course', 'course_id', :disabled => 'disabled' %></td>
+    </tr>
+  </table>
+</div>

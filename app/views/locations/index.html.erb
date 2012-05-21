@@ -1,0 +1,27 @@
+<h1>Lista de Locações</h1>
+
+<table class="grid">
+  <tr>
+    <th colspan="3" align="left"><%= link_to image_tag('add.png', :border => 0), new_location_path, :title => 'Adicionar' %></th>
+    <th>Livro</th>
+    <th>Aluno</th>
+    <th>Data Locação</th>
+    <th>Data Devolução</th>
+    <th>Devolvido</th>
+  </tr>
+
+<% @locations.each do |location| %>
+  <tr>
+    <td><%= link_to image_tag('view.png', :border => 0), location, :title => 'Visualizar' %></td>
+    <td><%= link_to image_tag('edit.png', :border => 0), edit_location_path(location), :title => 'Editar' %></td>
+    <td><%= link_to image_tag('delete.png', :border => 0), location, confirm: 'Deseja realmente excluir o registro?', method: :delete, :title => 'Excluir' %></td>
+    <td><%= location.book_id %></td>
+    <td><%= location.student_id %></td>
+    <td><%= location.date_location %></td>
+    <td><%= location.date_devolution %></td>
+    <td><%= location.returned %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

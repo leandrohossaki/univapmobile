@@ -1,0 +1,36 @@
+<%= render :file => "/mobile/header.html.erb" %>
+
+<div data-role="content">
+  <ul data-role="listview" data-theme="c" data-inset="true" data-filter="true">
+    <% @evaluations.each do |evaluation| %>
+      <li>
+        <a href="<%= url_for(:action => :discipline, :discipline_id => evaluation.discipline_id) %>">
+          <div class="inf">
+            <div class="nome"><%= evaluation.discipline.description %></div>
+            <div class="table">
+              <table class="ui-btn-up-c">
+                <tr>
+                  <th>M</th>
+                  <th>F</th>
+                </tr>
+                <tr>
+                  <% if evaluation.exame %>
+                  <td><%= (evaluation.evaluation1 + evaluation.evaluation2 + evaluation.exame)/3 %></td>
+                  <% else %>
+                  <td><%= (evaluation.evaluation1 + evaluation.evaluation2)/2 %></td>
+                  <% end %>
+                  
+                  <%if evaluation.num_lacks %>
+                  <td><%= evaluation.num_lacks.to_i %></td>
+                  <% else %>
+                  <td>-</td>
+                  <% end %>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</div>

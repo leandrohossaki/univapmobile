@@ -1,0 +1,10 @@
+<div data-role="header" data-theme="b"> 
+  <h1><%= @title %></h1>
+</div>
+
+<div data-role="content">
+  <ul data-role="listview" data-theme="c" data-inset="true">
+    <li><%= link_to "Principal", :action => :index %></li>
+    <li><%= link_to "Logout", :action => :logout %></li>
+  </ul>
+</div>

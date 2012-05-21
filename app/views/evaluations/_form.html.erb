@@ -1,0 +1,50 @@
+<%= form_for(@evaluation) do |f| %>
+  <% if @evaluation.errors.any? %>
+    <div id="error_explanation">
+      <strong><%= @evaluation.errors.count.to_s %> erro(s) encontrado(s):</strong>
+
+      <ul>
+      <% @evaluation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    </br>
+  <% end %>
+
+  <div class="fields">
+    <table>
+      <tr>
+        <td><label for="evaluation_discipline_id">Disciplina</label></td>
+        <td><%= text_field 'evaluation', 'discipline_id' %></td>
+      </tr>
+      <tr>
+        <td><label for="evaluation_student_id">Aluno</label></td>
+        <td><%= text_field 'evaluation', 'student_id' %></td>
+      </tr>
+      <tr>
+        <td><label for="evaluation_period">Período</label></td>
+        <td><%= text_field 'evaluation', 'period' %></td>
+      </tr>
+      <tr>
+        <td><label for="evaluation_evaluation1">Nota 1</label></td>
+        <td><%= text_field 'evaluation', 'evaluation1' %></td>
+      </tr>
+      <tr>
+        <td><label for="evaluation_evaluation2">Nota 2</label></td>
+        <td><%= text_field 'evaluation', 'evaluation2' %></td>
+      </tr>
+      <tr>
+        <td><label for="evaluation_exame">Exame</label></td>
+        <td><%= text_field 'evaluation', 'exame' %></td>
+      </tr>
+      <tr>
+        <td><label for="evaluation_status">Status</label></td>
+        <td><%= text_field 'evaluation', 'status' %></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"><%= f.submit @button_title %><td>
+      </tr>
+    </table>
+  </div>
+<% end %>

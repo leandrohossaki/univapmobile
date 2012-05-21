@@ -1,0 +1,10 @@
+<div data-role="header" data-theme="b"> 
+	<h1>Bem-Vindo!</h1> 
+</div><!-- /header -->
+
+<div data-role="content">
+  <ul data-role="listview" data-theme="g">
+    <li><%= link_to "student", "Aluno" %></li>
+    <li><%= link_to "library", "Biblioteca" %></li>
+  </ul>
+</div><!-- /content -->

@@ -1,0 +1,129 @@
+body {
+    font-family: Verdana, sans-serif;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+}
+h1#header {
+    background-color: #5894BE;
+    padding: 10px 10px 15px;
+    margin: 0;
+}
+h1#header a {
+    background-color: #5894BE;
+    color: white;
+    text-decoration: none;
+}
+#menu ul {
+    padding: 0px;
+    margin: 0px;
+    float: left;
+    width: 100%;
+    background-color: #EDEDED;
+    list-style: none;
+    border-bottom: 1px solid #5894BE;
+}
+#menu ul li { 
+    display: inline; 
+}
+#menu ul li a {
+    padding: 5px 10px;
+    float: left; 
+    /* visual do link */
+    background-color: #EDEDED;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 3px solid #EDEDED;
+}
+#menu ul li a:hover {
+    background-color: #D6D6D6;
+    color: #6D6D6D;
+    border-bottom: 3px solid #5894BE;
+}
+div#contents {
+    margin: 40px;
+}
+div#contents h1 {
+    color: #1B303F;
+    font-size: 140%;
+}
+div#contents h1 a {
+    color: #1B303F;
+}
+#login-information {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    margin: 0;
+    padding: 0;
+    font-size: small;
+    background-color: #5894BE;
+    color: white;
+}
+#login-information a {
+    background-color: #5894BE;
+    color: white;
+}
+.fields label {
+    font-size: 14px;
+    color: #325A78;
+    padding: 5px 8px;
+    font-weight: bold;
+}
+.fields input {
+    font-size: 14px;
+    color: #325A78;
+    border: 1px solid #999;
+    background-color: #FFF;
+    padding: 5px;
+}
+.fields input:hover {
+    background-color: #EAF1F7;
+}
+.fields input:focus {
+    background-color: #F1F7FA;
+}
+.fields input[disabled] {
+    border: 1px solid #999;
+    background-color: #F0F0F0;
+    padding: 5px;
+}
+.fields input[type=submit] {
+    margin-top: 15px;
+    padding: 5px 8px;
+    background-color: #3F7AA3;
+    border: 1px solid #999;
+    font-weight: bold;
+    color: #FFF;
+}
+.fields input[type=submit]:hover {
+    position: relative;
+    top: 1px;
+    left: 1px;
+    color: #DDD
+}
+.grid th{
+    font-size: 14px;
+    color: #325A78;
+    padding: 5px 8px;
+    border-bottom: 2px solid #294A63;
+}
+.grid td{
+    font-size: 12px;
+    color: #325A78;
+    padding: 2px 5px;
+    border-bottom: 1px solid #CCDFEC;
+}
+#error_explanation {
+    border: 1px solid red;
+    background-color: #FFE6E6;
+    font-size: 14px;
+    color: red;
+}
+#notice {
+    padding: 10px 10px;
+    border: 1px solid yellow;
+    background-color: #FFFEEA;
+    font-size: 14px;
+    color: #555;
+}

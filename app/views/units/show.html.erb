@@ -1,0 +1,31 @@
+<h1><%= link_to 'Unidades', units_path %> > Visualizar</h1>
+
+<% if notice %>
+  <div id="notice"><%= notice %></div>
+  </br>
+<% end %>
+
+<div class="fields">
+  <table>
+    <tr>
+      <td><label for="unit_id">Código</label></td>
+      <td><%= text_field 'unit', 'id', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="unit_description">Nome</label></td>
+      <td><%= text_field 'unit', 'name', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="unit_description">Descrição</label></td>
+      <td><%= text_field 'unit', 'description', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="unit_address">Endereço</label></td>
+      <td><%= text_field 'unit', 'address', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="unit_phone">Telefone</label></td>
+      <td><%= text_field 'unit', 'phone', :disabled => 'disabled' %></td>
+    </tr>
+  </table>
+</div>

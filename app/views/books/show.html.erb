@@ -1,0 +1,35 @@
+<h1><%= link_to 'Livros', books_path %> > Visualizar</h1>
+
+<% if notice %>
+  <div id="notice"><%= notice %></div>
+  </br>
+<% end %>
+
+<div class="fields">
+  <table>
+    <tr>
+      <td><label for="book_id">Código</label></td>
+      <td><%= text_field 'book', 'id', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="book_category_id">Categoria</label></td>
+      <td><%= text_field 'book', 'category_id', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="book_name">Nome</label></td>
+      <td><%= text_field 'book', 'name', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="book_author">Autor</label></td>
+      <td><%= text_field 'book', 'author', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="book_editor">Editora</label></td>
+      <td><%= text_field 'book', 'editor', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="book_unit_id">Unidade</label></td>
+      <td><%= text_field 'book', 'unit_id', :disabled => 'disabled' %></td>
+    </tr>
+  </table>
+</div>

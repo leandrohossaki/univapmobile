@@ -1,0 +1,27 @@
+<h1><%= link_to 'Faltas', lacks_path %> > Visualizar</h1>
+
+<% if notice %>
+  <div id="notice"><%= notice %></div>
+  </br>
+<% end %>
+
+<div class="fields">
+  <table>
+    <tr>
+      <td><label for="lack_discipline_id">Disciplina</label></td>
+      <td><%= text_field 'lack', 'discipline_id', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="lack_student_id">Aluno</label></td>
+      <td><%= text_field 'lack', 'student_id', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="lack_date">Data</label></td>
+      <td><%= text_field 'lack', 'date', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="lack_num_lacks">Faltas</label></td>
+      <td><%= text_field 'lack', 'num_lacks', :disabled => 'disabled' %></td>
+    </tr>
+  </table>
+</div>

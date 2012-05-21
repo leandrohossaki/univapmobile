@@ -1,0 +1,34 @@
+<%= form_for(@discipline) do |f| %>
+  <% if @discipline.errors.any? %>
+    <div id="error_explanation">
+      <strong><%= @discipline.errors.count.to_s %> erro(s) encontrado(s):</strong>
+
+      <ul>
+      <% @discipline.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    </br>
+  <% end %>
+
+  <div class="fields">
+    <table>
+      <tr>
+        <td><label for="discipline_id">Código</label></td>
+        <td><%= text_field 'discipline', 'id', :disabled => 'disabled' %></td>
+      </tr>
+      <tr>
+        <td><label for="discipline_course_id">Curso</label></td>
+        <td><%= text_field 'discipline', 'course_id'%></td>
+      </tr>
+      <tr>
+        <td><label for="discipline_description">Descrição</label></td>
+        <td><%= text_field 'discipline', 'description'%></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"><%= f.submit @button_title %><td>
+      </tr>
+    </table>
+  </div>
+<% end %>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UnivapMobile</title>
+  <%= stylesheet_link_tag "default" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <h1 id="header"><%= link_to "UNIVAP Mobile", :controller => "Home" %></h1>
+  
+  <% if session_user %>
+    <p id="login-information">
+      Você está logado como <strong><%= session_user.name %></strong>.
+      <%= link_to "Sair", :controller => "login", :action => "logout" %>.
+    </p>
+  <% end %>
+  
+  <div id="menu">
+    <ul>
+      <li><%= link_to "Categorias", :controller => "categories" %></li>
+      <li><%= link_to "Livros", :controller => "books" %></li>
+      <li><%= link_to "Unidades", :controller => "units" %></li>
+      <li><%= link_to "Cursos", :controller => "courses" %></li>
+      <li><%= link_to "Disciplinas", :controller => "disciplines" %></li>
+      <li><%= link_to "Unidades x Cursos", :controller => "units_courses" %></li>
+      <li><%= link_to "Alunos", :controller => "students" %></li>
+      <li><%= link_to "Locações", :controller => "locations" %></li>
+      <li><%= link_to "Notas", :controller => "evaluations" %></li>
+      <li><%= link_to "Faltas", :controller => "lacks" %></li>
+    </ul>
+  </div>
+  
+  <div id="contents"><%= yield %></div>
+
+</body>
+</html>

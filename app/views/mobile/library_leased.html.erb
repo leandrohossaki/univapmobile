@@ -1,0 +1,27 @@
+<%= render :file => "/mobile/header.html.erb" %>
+
+<div data-role="content">
+  <ul data-role="listview" data-theme="c" data-inset="true" data-filter="true">
+    <% @locations.each do |location| %>
+      <% if location.date_devolution < Date.today %>
+        <li data-theme="e">
+      <% else %>
+        <li>
+      <% end %>
+        <a href="/mobile/book/<%= location.book.id %>">
+          <h4 name="book_name"><%= location.book.name %></h4>
+          <table class="bookinf">
+            <tr>
+              <td><strong>Locação</strong></td>
+              <td><%= location.date_location.strftime("%d/%m/%Y") %></td>
+            </tr>
+            <tr>
+              <td><strong>Devolução</strong></td>
+              <td><%= location.date_devolution.strftime("%d/%m/%Y") %></td>
+            </tr>
+          </table>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</div>

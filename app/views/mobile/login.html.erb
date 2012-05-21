@@ -1,0 +1,30 @@
+<div data-role="header" data-theme="b"> 
+  <h1><%= @title %></h1> 
+</div>
+
+<div data-role="content">
+  <%= form_tag @student do |f| %>
+    <% if flash[:notice] %>
+      <div id="error_explanation">
+        <ul>
+          <% flash.each do |key, msg| %>
+          <li><%= msg %></li>
+          <% end %>
+          <% flash[:notice] = nil %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div data-role="fieldcontain" class="ui-hide-label">
+      <label for="id">Matrícula</label>
+      <%= number_field "id", "", :maxlength => 10, :placeholder => "Matrícula" %>
+    </div>
+    <div data-role="fieldcontain" class="ui-hide-label">
+      <label for="password">Senha</label>
+      <%= password_field "password", "", :maxlength => 10, :placeholder => "Senha" %>
+    </div>
+    <p>
+      <%= submit_tag "Entrar" %>
+    </p>
+  <% end %>
+</div>

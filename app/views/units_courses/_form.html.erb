@@ -1,0 +1,30 @@
+<%= form_for(@units_course) do |f| %>
+  <% if @units_course.errors.any? %>
+    <div id="error_explanation">
+      <strong><%= @units_course.errors.count.to_s %> erro(s) encontrado(s):</strong>
+
+      <ul>
+      <% @units_course.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    </br>
+  <% end %>
+
+  <div class="fields">
+    <table>
+      <tr>
+        <td><label for="units_course_unit_id">Unidade</label></td>
+        <td><%= text_field 'units_course', 'unit_id' %></td>
+      </tr>
+      <tr>
+        <td><label for="units_course_course_id">Curso</label></td>
+        <td><%= text_field 'units_course', 'course_id' %></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"><%= f.submit @button_title %><td>
+      </tr>
+    </table>
+  </div>
+<% end %>

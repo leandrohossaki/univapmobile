@@ -1,0 +1,31 @@
+<h1><%= link_to 'Locações', locations_path %> > Visualizar</h1>
+
+<% if notice %>
+  <div id="notice"><%= notice %></div>
+  </br>
+<% end %>
+
+<div class="fields">
+  <table>
+    <tr>
+      <td><label for="location_book_id">Livro</label></td>
+      <td><%= text_field 'location', 'book_id', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="location_student_id">Aluno</label></td>
+      <td><%= text_field 'location', 'student_id', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="location_date_location">Data Locação</label></td>
+      <td><%= text_field 'location', 'date_location', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="location_date_devolution">Data Devolução</label></td>
+      <td><%= text_field 'location', 'date_devolution', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="location_returned">Devolvido</label></td>
+      <td><%= text_field 'location', 'returned', :disabled => 'disabled' %></td>
+    </tr>
+  </table>
+</div>

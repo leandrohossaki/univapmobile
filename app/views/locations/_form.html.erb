@@ -1,0 +1,42 @@
+<%= form_for(@location) do |f| %>
+  <% if @location.errors.any? %>
+    <div id="error_explanation">
+      <strong><%= @location.errors.count.to_s %> erro(s) encontrado(s):</strong>
+
+      <ul>
+      <% @location.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    </br>
+  <% end %>
+
+  <div class="fields">
+    <table>
+      <tr>
+        <td><label for="location_book_id">Livro</label></td>
+        <td><%= text_field 'location', 'book_id' %></td>
+      </tr>
+      <tr>
+        <td><label for="location_student_id">Aluno</label></td>
+        <td><%= text_field 'location', 'student_id' %></td>
+      </tr>
+      <tr>
+        <td><label for="location_date_location">Data Locação</label></td>
+        <td><%= text_field 'location', 'date_location' %></td>
+      </tr>
+      <tr>
+        <td><label for="location_date_devolution">Data Devolução</label></td>
+        <td><%= text_field 'location', 'date_devolution' %></td>
+      </tr>
+      <tr>
+        <td><label for="location_returned">Devolvido</label></td>
+        <td><%= text_field 'location', 'returned' %></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"><%= f.submit @button_title %><td>
+      </tr>
+    </table>
+  </div>
+<% end %>

@@ -1,0 +1,44 @@
+<%= render :file => "/mobile/header.html.erb" %>
+
+<div data-role="content">
+  <%= form_for(@student) do |f| %>
+    <ul data-role="listview" data-theme="c" data-inset="true">
+      <li>
+        <h4>Matrícula</h4>
+        <p><%= @student.id %></p>
+      </li>
+      <li>
+        <h4>Nome</h4>
+        <p><%= @student.name %></p>
+      </li>
+      <li>
+        <h4>Data Nascimento</h4>
+        <p><%= @student.birth %></p>
+      </li>
+      <li>
+        <h4>RG</h4>
+        <p><%= @student.rg %></p>
+      </li>
+      <li>
+        <h4>CPF</h4>
+        <p><%= @student.cpf %></p>
+      </li>
+      <li>
+        <h4>Endereço</h4>
+        <p><%= @student.address %></p>
+      </li>
+      <li>
+        <h4>Telefone</h4>
+        <p><%= @student.phone %></p>
+      </li>
+      <li>
+        <h4>Curso</h4>
+        <p><%= @student.course.description %></p>
+      </li>
+      <li>
+        <h4>Unidade</h4>
+        <p><%= @student.unit.name %></p>
+      </li>
+    </ul>
+  <% end %>
+</div>

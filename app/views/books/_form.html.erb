@@ -1,0 +1,46 @@
+<%= form_for(@book) do |f| %>
+  <% if @book.errors.any? %>
+    <div id="error_explanation">
+      <strong><%= @book.errors.count.to_s %> erro(s) encontrado(s):</strong>
+
+      <ul>
+      <% @book.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    </br>
+  <% end %>
+
+  <div class="fields">
+    <table>
+      <tr>
+        <td><label for="book_id">Código</label></td>
+        <td><%= text_field 'book', 'id', :disabled => 'disabled' %></td>
+      </tr>
+      <tr>
+        <td><label for="book_category_id">Categoria</label></td>
+        <td><%= text_field 'book', 'category_id' %></td>
+      </tr>
+      <tr>
+        <td><label for="book_name">Nome</label></td>
+        <td><%= text_field 'book', 'name' %></td>
+      </tr>
+      <tr>
+        <td><label for="book_author">Autor</label></td>
+        <td><%= text_field 'book', 'author' %></td>
+      </tr>
+      <tr>
+        <td><label for="book_editor">Editora</label></td>
+        <td><%= text_field 'book', 'editor' %></td>
+      </tr>
+      <tr>
+        <td><label for="book_unit_id">Unidade</label></td>
+        <td><%= text_field 'book', 'unit_id' %></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"><%= f.submit @button_title %><td>
+      </tr>
+    </table>
+  </div>
+<% end %>

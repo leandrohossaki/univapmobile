@@ -1,0 +1,71 @@
+<%= render :file => "/mobile/header.html.erb" %>
+
+<div data-role="content">
+  <ul data-role="listview" data-theme="c" data-inset="true">
+    <li data-role="list-divider">
+      Dados
+    </li>
+    <li>
+      <h4>Código</h4>
+      <p><%= @discipline.id %></p>
+    </li>
+    <li>
+      <h4>Disciplina</h4>
+      <p><%= @discipline.description %></p>
+    </li>
+    <% @evaluation.each do |evaluation| %>
+    <li>
+      <h4>Período</h4>
+      <p><%= evaluation.period %></p>
+    </li>
+  </ul>
+  <ul data-role="listview" data-theme="c" data-inset="true">
+    <li data-role="list-divider">
+      Notas
+    </li>
+    <li>
+      <div class="ui-grid-a centro">
+        <div class="ui-block-a">N1</div>
+        <% if evaluation.evaluation1 %>
+        <div class="ui-block-b"><%= evaluation.evaluation1 %></div>
+        <%else%>
+        <div class="ui-block-b">-</div>
+        <%end%>
+      </div>
+    </li>
+    <li>
+      <div class="ui-grid-a centro">
+        <div class="ui-block-a">N2</div>
+        <% if evaluation.evaluation2 %>        
+        <div class="ui-block-b"><%= evaluation.evaluation2 %></div>
+        <%else%>
+        <div class="ui-block-b">-</div>
+        <%end%>
+      </div>
+    </li>
+    <li>
+      <div class="ui-grid-a centro">
+        <div class="ui-block-a">EX</div>
+        <% if evaluation.exame %>
+        <div class="ui-block-b"><%= evaluation.exame %></div><%else%>
+        <div class="ui-block-b">-</div>
+        <%end%>
+        
+      </div>
+    </li>
+    <% end %>
+  </ul>
+  <ul data-role="listview" data-theme="c" data-inset="true">
+    <li data-role="list-divider">
+      Faltas
+    </li>
+    <% @lacks.each do |lack| %>
+    <li>
+      <div class="ui-grid-a centro">
+        <div class="ui-block-a"><%= lack.date.strftime("%d/%m/%Y") %></div>
+        <div class="ui-block-b"><%= lack.num_lacks %></div>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>

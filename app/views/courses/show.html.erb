@@ -1,0 +1,19 @@
+<h1><%= link_to 'Cursos', courses_path %> > Visualizar</h1>
+
+<% if notice %>
+  <div id="notice"><%= notice %></div>
+  </br>
+<% end %>
+
+<div class="fields">
+  <table>
+    <tr>
+      <td><label for="course_id">Código</label></td>
+      <td><%= text_field 'course', 'id', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="course_description">Descrição</label></td>
+      <td><%= text_field 'course', 'description', :disabled => 'disabled' %></td>
+    </tr>
+  </table>
+</div>

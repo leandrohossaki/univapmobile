@@ -1,0 +1,57 @@
+.centro {
+    text-align: center;
+}
+.inf {
+    height:40px;
+}
+.nome {
+    position: relative;
+    top:50%;
+    margin-top:-.9em;
+}
+.infright {
+    position: absolute;
+    font-size:12px;
+    font-weight:normal;
+    padding:.2em .5em;
+    top:50%;
+    margin-top: -17px;
+}
+.infright span{
+    display:block;
+    font-weight:bold;
+}
+.bookinf {
+    font-size:12px;
+    font-weight:normal;
+}
+.n1 {
+    right:115px;
+}
+.n2 {
+    right:85px;
+}
+.ex {
+    right:55px;
+}
+.falta {
+    right:30px;
+}
+.table {
+    position: absolute;
+    font-size:12px;
+    font-weight:normal;
+    padding:.2em .5em;
+    top:50%;
+    right: 30px;
+    margin-top: -23px;
+    text-align:center;
+}
+.table table {
+    -moz-border-radius:1em;
+    -webkit-border-radius:1em;
+    -border-radius:1em;
+}
+.table th, td {
+    width: 24px;
+}

@@ -1,0 +1,23 @@
+<h1><%= link_to 'Disciplinas', disciplines_path %> > Visualizar</h1>
+
+<% if notice %>
+  <div id="notice"><%= notice %></div>
+  </br>
+<% end %>
+
+<div class="fields">
+  <table>
+    <tr>
+      <td><label for="discipline_id">Código</label></td>
+      <td><%= text_field 'discipline', 'id', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="discipline_course_id">Curso</label></td>
+      <td><%= text_field 'discipline', 'course_id', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="discipline_description">Descrição</label></td>
+      <td><%= text_field 'discipline', 'description', :disabled => 'disabled' %></td>
+    </tr>
+  </table>
+</div>

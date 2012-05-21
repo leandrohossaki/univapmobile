@@ -1,0 +1,39 @@
+<h1><%= link_to 'Avaliações', evaluations_path %> > Visualizar</h1>
+
+<% if notice %>
+  <div id="notice"><%= notice %></div>
+  </br>
+<% end %>
+
+<div class="fields">
+  <table>
+    <tr>
+      <td><label for="evaluation_discipline_id">Disciplina</label></td>
+      <td><%= text_field 'evaluation', 'discipline_id', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="evaluation_student_id">Aluno</label></td>
+      <td><%= text_field 'evaluation', 'student_id', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="evaluation_period">Período</label></td>
+      <td><%= text_field 'evaluation', 'period', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="evaluation_evaluation1">Nota 1</label></td>
+      <td><%= text_field 'evaluation', 'evaluation1', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="evaluation_evaluation2">Nota 2</label></td>
+      <td><%= text_field 'evaluation', 'evaluation2', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="evaluation_exame">Exame</label></td>
+      <td><%= text_field 'evaluation', 'exame', :disabled => 'disabled' %></td>
+    </tr>
+    <tr>
+      <td><label for="evaluation_status">Status</label></td>
+      <td><%= text_field 'evaluation', 'status', :disabled => 'disabled' %></td>
+    </tr>
+  </table>
+</div>

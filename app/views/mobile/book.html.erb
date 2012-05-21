@@ -1,0 +1,32 @@
+<%= render :file => "/mobile/header.html.erb" %>
+
+<div data-role="content">
+  <%= form_for(@book) do |f| %>
+    <ul data-role="listview" data-theme="c" data-inset="true">
+      <li>
+        <h4>Código</h4>
+        <p><%= @book.id %></p>
+      </li>
+      <li>
+        <h4>Categoria</h4>
+        <p><%= @book.category.description %></p>
+      </li>
+      <li>
+        <h4>Nome</h4>
+        <p><%= @book.name %></p>
+      </li>
+      <li>
+        <h4>Autor</h4>
+        <p><%= @book.author %></p>
+      </li>
+      <li>
+        <h4>Editora</h4>
+        <p><%= @book.editor %></p>
+      </li>
+      <li>
+        <h4>Unidade</h4>
+        <p><%= @book.unit.name %></p>
+      </li>
+    </ul>
+  <% end %>
+</div>

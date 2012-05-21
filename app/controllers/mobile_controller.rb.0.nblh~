@@ -1,0 +1,73 @@
+class MobileController < ApplicationController
+  layout "mp_mobile"
+  
+  skip_before_filter :authenticate, :only => [:login, :options2]
+  
+  def index
+    @title = "Bem-Vindo!"
+  end
+  
+  def student
+    @title = "Aluno"
+  end
+  
+  def library
+    @title = "Biblioteca"
+  end
+  
+  def library_unit
+    @title = "Unidades"
+    @units = Unit.all(:order => "name")
+  end
+  
+  def library_available
+    @title = "Disponíveis"
+    @books = Book.find(:all,
+                       :joins => "LEFT JOIN locations ON books.id = locations.book_id",
+                       :conditions => ['books.unit_id = ? AND (locations.returned = ? OR locations.returned IS NULL)', params[:id], false],
+                       :order => "books.name")
+  end
+  
+  def library_leased
+    @title = "Locados"
+  end
+  
+  def library_history
+    @title = "Histórico"
+  end
+  
+  def options
+    @title = "Opções"
+  end
+  
+  def options2
+    @title = "Opções2"
+  end
+
+  def login
+    @title = "Login"
+    if !session[:user]
+      if request.post?
+        @student = Student.find_by_id_and_password(params[:id], params[:password])
+        if @student
+          session[:user] = @student.id
+          if session[:return_to] && !session[:return_to].include?(url_for(:action => "login")) && !session[:return_to].include?(url_for(:action => "logout"))
+            redirect_to session[:return_to]
+            session[:return_to] = nil
+          else
+            redirect_to :controler => :mobile, :action => :index
+          end
+        else
+          flash[:notice] = "Invalid login and/or password."
+        end
+      end
+    else
+      redirect_to :action => :index
+    end
+  end
+  
+  def logout
+    @title = "Logout"
+    session[:user] = nil
+  end
+end
